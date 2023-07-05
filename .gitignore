@@ -1,0 +1,26 @@
+# gitignore
+.DS_Store
+.idea/
+
+build/
+*.aux
+*.log
+*.nav
+*.out
+*.snm
+*.toc
+*.synctex.gz
+*.toc.vrb
+*.vrb
+*.bbl
+*.bcf
+*.run.xml
+*.blg
+*.pdf
+*.sav
+*.fdb_latexmk
+*.fls
+
+*.docx
+
+log/
