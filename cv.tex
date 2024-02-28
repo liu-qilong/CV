@@ -1,8 +1,11 @@
 \documentclass[letterpaper,11pt]{article}
 \input{customize.tex}
 
-\usepackage{natbib}
-\usepackage{bibentry}
+% bibliography
+\usepackage[style=ieee, backend=biber, sorting=ydnt]{biblatex}
+\DeclareFieldFormat{labelnumberwidth}{}
+\setlength{\biblabelsep}{0pt}
+\addbibresource{publications.bib}
 
 \begin{document}
     \begin{center}
@@ -22,7 +25,7 @@
             {https://orcid.org/0000-0001-7843-1925}
             {ORCID \includegraphics[height=0.3cm]{icon/orcid.png}}
         \href
-            {https://github.com/TOB-KNPOB}
+            {https://github.com/liu-qilong}
             {GitHub \includegraphics[height=0.3cm]{icon/github.png}}
         \href
             {https://www.linkedin.com/in/qilong-liu-92700a229/}
@@ -69,21 +72,20 @@
 
     % publications
     \section{Publications}
+    
+    \begin{refsection}
+        \nocite{*}
 
-    \nobibliography{publications.bib}
-    \bibliographystyle{unsrt}
-
-    \begin{enumerate}[leftmargin=0.15in, label={}, itemsep=0em]
-        \item \underline{Under Review}
-        \item \bibentry{Liu_Q_2023}
-        
-        \item \underline{Journal}
-        \item \bibentry{Zhang_L_2023}
-        \item \bibentry{Shi_Q_2022}
-        
-        \item \underline{Conference}
-        \item \bibentry{Liu_Q_2022}
-    \end{enumerate}
+        \begin{enumerate}[leftmargin=0.15in, label={}, itemsep=0em]
+            \item \textbf{Journal}
+            \printbibliography[type=article, heading=none]
+            \item \textbf{Conference}
+            \printbibliography[type=inproceedings, heading=none]
+            \item \textbf{Thesis}
+            \printbibliography[type=thesis, heading=none]
+            \printbibliography[type=phdthesis, heading=none]
+        \end{enumerate}
+    \end{refsection}
 
     % projects
     \section{Open-source Projects \emph{(selected)}}
@@ -91,23 +93,23 @@
     \resumeSubHeadingListStart
         \resumeSubheading
             {FEcluster}{2023}
-            {Distribute FE simulation tasks across multiple computers via SSH}{\href{https://github.com/TOB-KNPOB/FEcluster}{\underline{Link}}}
+            {Distribute FE simulation tasks across multiple computers via SSH}{\href{https://github.com/liu-qilong/FEcluster}{\underline{Link}}}
         \resumeSubheading
             {mesh4d}{2023}
-            {Toolkit for 4D (3D + T) data visualisation, operation, and dynamic estimation}{\href{https://github.com/TOB-KNPOB/mesh4d}{\underline{Link}}}
+            {Toolkit for 4D (3D + T) data visualisation, operation, and dynamic estimation}{\href{https://github.com/liu-qilong/mesh4d}{\underline{Link}}}
         \resumeSubheading
             {qilong-liu.vercel.app}{2023}
-            {Minimalist personal blog site based on Next.js and Tailwind}{\href{https://github.com/TOB-KNPOB/qilong-liu}{\underline{Link}}}
+            {Minimalist personal blog site based on Next.js and Tailwind}{\href{https://github.com/liu-qilong/qilong-liu}{\underline{Link}}}
         \resumeSubheading
             {pedarProbe}{2022}
-            {Data analysis framework for pedar plantar pressure sensor}{\href{https://github.com/TOB-KNPOB/pedarProbe}{\underline{Link}}}
+            {Data analysis framework for pedar plantar pressure sensor}{\href{https://github.com/liu-qilong/pedarProbe}{\underline{Link}}}
         \resumeSubheading
             {mobjTOB}{2022}
-            {Self-customized Manim mobjects for visualizing Machine Learning framework}{\href{https://github.com/TOB-KNPOB/mobjTOB}{\underline{Link}}}
+            {Self-customized Manim mobjects for visualizing Machine Learning framework}{\href{https://github.com/liu-qilong/mobjTOB}{\underline{Link}}}
             \resumeSubline{e.g. MLP, CNN, and Transformer}
         \resumeSubheading
             {Beamer-LaTeX-Themes}{2022}
-            {Customized beamer templates for PolyU, SZU, and more}{\href{https://github.com/TOB-KNPOB/Beamer-LaTeX-Themes}{\underline{Link}}}
+            {Customized beamer templates for PolyU, SZU, and more}{\href{https://github.com/liu-qilong/Beamer-LaTeX-Themes}{\underline{Link}}}
     \resumeSubHeadingListEnd
 
     % skills
