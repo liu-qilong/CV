@@ -28,11 +28,8 @@
             {https://github.com/liu-qilong}
             {GitHub \includegraphics[height=0.3cm]{icon/github.png}}
         \href
-            {https://www.linkedin.com/in/qilong-liu-92700a229/}
-            {LinkedIn  \includegraphics[height=0.3cm]{icon/linkedin.png}}
-        \href
             {https://qilong-liu.vercel.app}
-            {Blog Site \includegraphics[height=0.3cm]{icon/blog.png}}
+            {Homepage \includegraphics[height=0.3cm]{icon/blog.png}}
     \end{center}
 
     % education
@@ -40,18 +37,18 @@
 
     \resumeSubHeadingListStart
         \resumeSubheading
-            {The Hong Kong Polytechnic University}{Sep 2021 -- Present}
+            {The Hong Kong Polytechnic University}{Sep 2021 -- Feb 2024}
             {Master of Philosophy, School of Fashion and Textiles}{Hong Kong, China}
             \resumeSubline{\href{https://www.aidlab.hk/en/}{Laboratory for Artificial Intelligence in Design (AiDLab)}}
             \resumeSubline{Supervised by \href{https://research.polyu.edu.hk/en/persons/kit-lun-yick}{Prof. Kit-lun Yick}, \href{https://www.polyu.edu.hk/en/pri/people/pri-people/dr-yip-yiu-wan-joanne/}{Prof. Joanne Yip} and Dr. Yue Sun}
         \resumeSubheading
             {Shenzhen University}{Sep 2017 -- Jul 2021}
             {Bachelor of Engineering, School of Biomedical Engineering}{Shenzhen, China}
-            \resumeSubline{Supervised by \href{https://bme.szu.edu.cn/20161/0229/35.html}{Prof. Yongjin Zhou}}
+            \resumeSubline{Supervised by \href{https://bme.szu.edu.cn/20161/0229/35.html}{Dr. Yongjin Zhou}}
     \resumeSubHeadingListEnd
 
     % awards
-    \section{Awards \& Honors}
+    \section{Awards}
 
     \resumeSubHeadingListStart
         \resumeSubheading
@@ -74,23 +71,47 @@
     \section{Publications}
     
     \begin{refsection}
-        \nocite{*}
-
         \begin{enumerate}[leftmargin=0.15in, label={}, itemsep=0em]
+            \item \textbf{Under Review}
+            \nocite{*}
+            \printbibliography[keyword=review, heading=none]
             \item \textbf{Journal}
-            \printbibliography[type=article, heading=none]
+            \nocite{*}
+            \printbibliography[type=article, notkeyword=review, heading=none]
             \item \textbf{Conference}
-            \printbibliography[type=inproceedings, heading=none]
+            \nocite{*}
+            \printbibliography[type=inproceedings, notkeyword=review, heading=none]
             \item \textbf{Thesis}
-            \printbibliography[type=thesis, heading=none]
-            \printbibliography[type=phdthesis, heading=none]
+            \nocite{*}
+            \printbibliography[type=thesis, notkeyword=review, heading=none]
+            \printbibliography[type=phdthesis, notkeyword=review, heading=none]
         \end{enumerate}
     \end{refsection}
 
-    % projects
-    \section{Open-source Projects \emph{(selected)}}
+    % work experience
+    \section{Work experience}
 
     \resumeSubHeadingListStart
+        \resumeSubheading
+            {The Hong Kong Polytechnic University}{Sep 2023 -- Present}
+            {Research Assistant (full-time)}{Hong Kong, China}
+            \resumeSubline{Supervised by \href{https://research.polyu.edu.hk/en/persons/kit-lun-yick}{Prof. Kit-lun Yick}}
+        \resumeSubheading
+            {Shenzhen Base of The Hong Kong Polytechnic University}{Dec 2020 -- Jun 2021}
+            {Student Assistant (part-time) for \href{https://research.polyu.edu.hk/en/persons/kit-lun-yick}{Prof. Kit-lun Yick}}{Shenzhen, Guangdong, China}
+            \resumeSubline{Supervised by \href{https://research.polyu.edu.hk/en/persons/kit-lun-yick}{Prof. Kit-lun Yick}}
+        \resumeSubheading
+            {Shenzhen Zhishixinyun Educational Technology Ltd.}{Nov 2019 -- Mar 2020}
+            {Software Engineer (internship)}{Shenzhen, Guangdong, China}
+    \resumeSubHeadingListEnd
+
+    % projects
+    \section{Open-source projects \emph{(selected)}}
+
+    \resumeSubHeadingListStart
+        \resumeSubheading
+            {PaperThread}{2024}
+            {Visualize papers' relations as threads}{\href{https://github.com/liu-qilong/obsidian-setup}{\underline{Link}}}
         \resumeSubheading
             {FEcluster}{2023}
             {Distribute FE simulation tasks across multiple computers via SSH}{\href{https://github.com/liu-qilong/FEcluster}{\underline{Link}}}
@@ -104,38 +125,20 @@
             {pedarProbe}{2022}
             {Data analysis framework for pedar plantar pressure sensor}{\href{https://github.com/liu-qilong/pedarProbe}{\underline{Link}}}
         \resumeSubheading
-            {mobjTOB}{2022}
-            {Self-customized Manim mobjects for visualizing Machine Learning framework}{\href{https://github.com/liu-qilong/mobjTOB}{\underline{Link}}}
-            \resumeSubline{e.g. MLP, CNN, and Transformer}
-        \resumeSubheading
             {Beamer-LaTeX-Themes}{2022}
             {Customized beamer templates for PolyU, SZU, and more}{\href{https://github.com/liu-qilong/Beamer-LaTeX-Themes}{\underline{Link}}}
     \resumeSubHeadingListEnd
 
     % skills
-    \section{Specialized Skills}
+    \section{Skill set}
 
     \begin{itemize}[leftmargin=0.15in, label={}, itemsep=0em]
         \item \textbf{Languages}\\
         English (fluent); Mandarin (native); Cantonese (native)
-        \item \textbf{Programming Languages}\\
-        Python (seasoned); Matlab (intermediate); JavaScript (intermediate); C/C++ (basic); Shell Scripting (intermediate);
-        \item \textbf{Technical Stacks}\\
-        Data Processing \& Visualization with Python (seasoned); LLM Application with LangChain \& OpenAI API (intermediate); Machine Learning with PyTorch (intermediate); Web development with Next.js (intermediate); Desktop/Mobile Application with Electron/Reactive Native (basic); Finite Element Modelling (basic)
-        \item \textbf{Tool Set}\\
-        Documentation with Sphinx \& ReadTheDocs (experienced); Version Control with Git \& GitHub (experienced); Typesetting with \LaTeX\ (experienced)
+        \item \textbf{Programming}\\
+        Python (seasoned); JavaScript (intermediate); Bash shell scripting (intermediate); C/C++ (basic); Matlab (intermediate)
+        \item \textbf{Others}\\
+        LaTeX (seasoned); TikZ (intermediate); Git (seasoned); Docker (basic); Next.js (seasoned); Sphinx (seasoned)
     \end{itemize}
-
-    % work experience
-    \section{Work Experience}
-
-    \resumeSubHeadingListStart
-        \resumeSubheading
-            {Shenzhen Base of The Hong Kong Polytechnic University}{Dec 2020 -- Jun 2021}
-            {Student Assistant (part-time)}{Shenzhen, Guangdong, China}
-        \resumeSubheading
-            {Shenzhen Zhishixinyun Educational Technology Ltd.}{Nov 2019 -- Mar 2020}
-            {Software Engineer (internship)}{Shenzhen, Guangdong, China}
-    \resumeSubHeadingListEnd
 
 \end{document}
