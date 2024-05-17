@@ -2,10 +2,8 @@
 \input{customize.tex}
 
 % bibliography
-\usepackage[style=ieee, backend=biber, sorting=ydnt]{biblatex}
-\DeclareFieldFormat{labelnumberwidth}{}
-\setlength{\biblabelsep}{0pt}
-\addbibresource{publications.bib}
+\usepackage{natbib}
+\usepackage{bibentry}
 
 \begin{document}
     \begin{center}
@@ -39,7 +37,8 @@
         \resumeSubheading
             {The Hong Kong Polytechnic University}{Sep 2021 -- Feb 2024}
             {Master of Philosophy, \href{https://www.aidlab.hk/en/}{Laboratory for Artificial Intelligence in Design (AiDLab)}}{Hong Kong, China}
-            \resumeSubline{Supervised by \href{https://research.polyu.edu.hk/en/persons/kit-lun-yick}{Prof. Kit-lun Yick}, \href{https://www.polyu.edu.hk/en/pri/people/pri-people/dr-yip-yiu-wan-joanne/}{Prof. Joanne Yip} and Dr. Yue Sun}
+            \resumeSubline{Supervised by \href{https://research.polyu.edu.hk/en/persons/kit-lun-yick}{Prof. Kit-lun Yick}}
+            \resumeSubline{Co-supervised by \href{https://www.polyu.edu.hk/en/pri/people/pri-people/dr-yip-yiu-wan-joanne/}{Prof. Joanne Yip} and Dr. Yue Sun}
         \resumeSubheading
             {Shenzhen University}{Sep 2017 -- Jul 2021}
             {Bachelor of Engineering, School of Biomedical Engineering}{Shenzhen, China}
@@ -58,35 +57,35 @@
             {Third Prize, Shenzhen University}{}
         \resumeSubheading
             {National College Students Biomedical Engineering Innovation Design Competition}{2019}
-            {Third Prize, The Teaching Steering Committee of Biomedical Engineering in Colleges}{}
-            \resumeSubline{and Universities of the Ministry of Education}
+            {Third Prize}{}
         \resumeSubheading
-            {National College Students Electronic Design Competition in Guangdong Province}{2019}
-            {Third Prize, The Organizing Committee of the Guangdong Province Division of }{}
-            \resumeSubline{the National Undergraduate Electronic Design Competition}
+            {National College Students Electronic Design Competition}{2019}
+            {Third Prize in Guangdong Province}{}
     \resumeSubHeadingListEnd
 
     % publications
     \section{Publications}
-    
-    \begin{refsection}
-        \begin{enumerate}[leftmargin=0.15in, label={}, itemsep=0em]
-            \item \textbf{Under Review}
-            \nocite{*}
-            \printbibliography[keyword=review, heading=none]
-            \item \textbf{Journal}
-            \nocite{*}
-            \printbibliography[type=article, notkeyword=review, heading=none]
-            \newpage
-            \item \textbf{Conference}
-            \nocite{*}
-            \printbibliography[type=inproceedings, notkeyword=review, heading=none]
-            \item \textbf{Thesis}
-            \nocite{*}
-            \printbibliography[type=thesis, notkeyword=review, heading=none]
-            \printbibliography[type=phdthesis, notkeyword=review, heading=none]
-        \end{enumerate}
-    \end{refsection}
+
+    \nobibliography{publications.bib}
+    \bibliographystyle{unsrt}
+
+    \begin{enumerate}[leftmargin=0.15in, label={}, itemsep=0em]
+        \item \textbf{Under Review}
+        \item \bibentry{ZhangLiying2024}
+        
+        \item \textbf{Journal}
+        \item \bibentry{LiuQilong2024}
+        \item \bibentry{ChenJiazhen2024}
+        \item \bibentry{ZhangLiying2023}
+        \item \bibentry{ShiQiuqiong2022}
+        
+        \newpage
+        \item \textbf{Conference}
+        \item \bibentry{LiuQilong2022}
+
+        \item \textbf{Thesis}
+        \item \bibentry{LiuQilong2024a}
+     \end{enumerate}
 
     % work experience
     \section{Work \& research experience}
@@ -113,14 +112,14 @@
 
     \resumeSubHeadingListStart
         \resumeSubheading
+            {mesh4d}{2023}
+            {Toolkit for 4D (3D + T) data visualisation, operation, and dynamic estimation}{\href{https://github.com/liu-qilong/mesh4d}{\underline{Link}}}
+        \resumeSubheading
             {PaperThread}{2023}
             {Visualize papers' relations as threads}{\href{https://github.com/liu-qilong/obsidian-setup}{\underline{Link}}}
         \resumeSubheading
             {FEcluster}{2023}
             {Distribute FE simulation tasks across multiple computers via SSH}{\href{https://github.com/liu-qilong/FEcluster}{\underline{Link}}}
-        \resumeSubheading
-            {mesh4d}{2023}
-            {Toolkit for 4D (3D + T) data visualisation, operation, and dynamic estimation}{\href{https://github.com/liu-qilong/mesh4d}{\underline{Link}}}
         \resumeSubheading
             {qilong-liu.vercel.app}{2023}
             {Minimalist personal blog site based on Next.js and Tailwind}{\href{https://github.com/liu-qilong/qilong-liu}{\underline{Link}}}
