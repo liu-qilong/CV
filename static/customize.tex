@@ -37,8 +37,9 @@
 \setlength{\tabcolsep}{0in}
 
 \titleformat{\section}{
+  \vspace{-15pt}
   \large\vspace{3pt}\scshape
-}{}{0em}{}[\color{black}\titlerule\vspace{-5pt}]
+}{}{0em}{}[\color{black}\titlerule]%\vspace{-5pt}]
 
 \pdfgentounicode=1
 
@@ -62,11 +63,10 @@
     \end{tabular*}\vspace{-17pt}
 }
 
-
-\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-3pt}}
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}}%\vspace{-3pt}}
 \renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
 \newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
-\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}\vskip5pt}
 \newcommand{\resumeItemListStart}{\begin{itemize}}
 \newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-2pt}}
 
