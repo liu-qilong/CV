@@ -10,6 +10,7 @@
 \usepackage{graphicx}  % images
 \usepackage{tabularx}  % advanced tables
 \usepackage{multicol}  % multiple columns
+\usepackage{etoolbox}  % tools for custom commands
 
 % --- typeset settings ---
 % page layout
@@ -39,9 +40,32 @@
 \pdfgentounicode=1  % enable the generation of Unicode mappings in the PDF output
 
 % --- custom commands ---
-% resume listing
-\newcommand{\resumeListingStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
-\newcommand{\resumeListingEnd}{\end{itemize}\vskip5pt}
+% title
+\newcommand{\name}[1]{\renewcommand{\name}{#1}}
+\newcommand{\email}[1]{\renewcommand{\email}{#1}}
+
+\newcommand{\links}{}
+\newcommand{\addlink}[2]{\appto{\links}{\href{#1}{#2} }}  % #1: link #2: text
+\newcommand{\placelinks}{\links}
+
+\renewcommand{\maketitle}{
+    \begin{center}
+        % name
+        {\LARGE \name}\\
+        
+        % email
+        \vskip5pt
+        \url{\email}\\
+        \vskip5pt
+        
+        % links
+        \placelinks
+    \end{center}
+}
+
+% resume columns
+\newcommand{\resumeColumnsStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeColumnsEnd}{\end{itemize}\vskip5pt}
 
 \newcommand{\resumeEntry}[4]{
     % 2x2 standard entry in resume listing

@@ -5,30 +5,24 @@
 \usepackage{natbib}
 \usepackage{bibentry}
 
+% meta data
+\name{Qi-Long Liu}
+\email{qilong-kirov.liu@connect.polyu.hk}
+\addlink
+    {https://scholar.google.com/citations?user=N2-7ArsAAAAJ&hl=en}
+    {Google Scholar \includegraphics[height=0.3cm]{icon/google-scholar.png}}
+\addlink
+    {https://orcid.org/0000-0001-7843-1925}
+    {ORCID \includegraphics[height=0.3cm]{icon/orcid.png}}
+\addlink
+    {https://github.com/liu-qilong}
+    {GitHub \includegraphics[height=0.3cm]{icon/github.png}}
+\addlink
+    {https://qilong-liu.vercel.app}
+    {Homepage \includegraphics[height=0.3cm]{icon/blog.png}}
+
 \begin{document}
-    \begin{center}
-        % name
-        {\LARGE Qi-Long Liu}\\
-        
-        % email
-        \vskip5pt
-        \url{qilong-kirov.liu@connect.polyu.hk}\\
-        \vskip5pt
-        
-        % links
-        \href
-            {https://scholar.google.com/citations?user=N2-7ArsAAAAJ&hl=en}
-            {Google Scholar \includegraphics[height=0.3cm]{icon/google-scholar.png}}
-        \href
-            {https://orcid.org/0000-0001-7843-1925}
-            {ORCID \includegraphics[height=0.3cm]{icon/orcid.png}}
-        \href
-            {https://github.com/liu-qilong}
-            {GitHub \includegraphics[height=0.3cm]{icon/github.png}}
-        \href
-            {https://qilong-liu.vercel.app}
-            {Homepage \includegraphics[height=0.3cm]{icon/blog.png}}
-    \end{center}
+    \maketitle
 
     % research interests
     \section{Research interests}
@@ -38,7 +32,7 @@
     % education
     \section{Education}
 
-    \resumeListingStart
+    \resumeColumnsStart
         \resumeEntry
             {The Hong Kong Polytechnic University
             \href{https://www.topuniversities.com/world-university-rankings/2025?page=3}{\textsl{(QS \#57)}}}{Sep 2021 -- Feb 2024}
@@ -51,12 +45,12 @@
             {Bachelor of Engineering, School of Biomedical Engineering
             \href{https://www.shanghairanking.com/rankings/gras/2023/RS0208}{\textsl{(ARWU \#24)}}}{Shenzhen, China}
             \resumeSubline{Supervised by \href{https://bme.szu.edu.cn/20161/0229/35.html}{Dr. Yongjin Zhou}}
-    \resumeListingEnd
+    \resumeColumnsEnd
 
     % awards
     \section{Awards}
 
-    \resumeListingStart
+    \resumeColumnsStart
         \resumeEntry
             {The Hong Kong Polytechnic University Research Studentship}{2021 -- 2023}
             {The Hong Kong Polytechnic University}{}
@@ -69,14 +63,12 @@
         \resumeEntry
             {National College Students Electronic Design Competition}{2019}
             {Third Prize in Guangdong Province}{}
-    \resumeListingEnd
+    \resumeColumnsEnd
 
     % publications
     \section{Publications}
     
-    % \bibliographystyle{apalike}
     \bibliographystyle{unsrt}
-    % \bibliographystyle{unsrtnat}
     \nobibliography{publications.bib}
 
     \begin{enumerate}[leftmargin=0.15in, label={}, itemsep=0em]
@@ -103,7 +95,7 @@
     % work experience
     \section{Work \& research experience}
 
-    \resumeListingStart
+    \resumeColumnsStart
         \resumeEntry
             {The Hong Kong Polytechnic University}{Sep 2023 -- Present}
             {Research Assistant (full-time)}{Hong Kong, China}
@@ -118,12 +110,12 @@
             {Shenzhen Zhishixinyun Educational Technology Ltd.}{Nov 2019 -- Mar 2020}
             {Cofounder and Python tutorial lecturer}{Shenzhen, Guangdong, China}
             \resumeSubline{A campus startup that aims at providing short-term STEM and arts tutorials for college students}
-    \resumeListingEnd
+    \resumeColumnsEnd
 
     % projects
     \section{Open-source projects \emph{(selected)}}
 
-    \resumeListingStart
+    \resumeColumnsStart
         \resumeEntry
             {mesh4d}{2023}
             {Toolkit for 4D (3D + T) data visualisation, operation, and dynamic estimation}{\paralink{https://github.com/liu-qilong/mesh4d}{Link}}
@@ -139,7 +131,7 @@
         \resumeEntry
             {Beamer-LaTeX-Themes}{2022}
             {Customized beamer templates for PolyU, SZU, and more}{\paralink{https://github.com/liu-qilong/Beamer-LaTeX-Themes}{Link}}
-    \resumeListingEnd
+    \resumeColumnsEnd
 
     % skills
     \section{Skill set}
