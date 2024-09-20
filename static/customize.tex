@@ -1,22 +1,18 @@
+\usepackage[empty]{fullpage}  % full page margin
+\usepackage{baskervillef}  % Baskerville font
+\usepackage[T1]{fontenc}  % font encoding
+\usepackage[english]{babel}  % language
+\usepackage{titlesec}  % custom section fonts
+\usepackage{fancyhdr}  % header and footer
+\usepackage[usenames,dvipsnames]{xcolor}  % colors
+\usepackage{enumitem}  % list spacing
+\usepackage[hidelinks]{hyperref}  % links
+\usepackage{graphicx}  % images
+\usepackage{tabularx}  % advanced tables
+\usepackage{multicol}  % multiple columns
 
-\usepackage{latexsym}
-\usepackage[empty]{fullpage}
-\usepackage{titlesec}
-\usepackage{marvosym}
-\usepackage[usenames,dvipsnames]{color}
-\usepackage{verbatim}
-\usepackage{enumitem}
-\usepackage[hidelinks]{hyperref}
-\usepackage{graphicx}
-\usepackage{fancyhdr}
-\usepackage[english]{babel}
-\usepackage{tabularx}
-\usepackage{multicol}
-\input{glyphtounicode}
-
-\usepackage{baskervillef}
-\usepackage[T1]{fontenc}
-
+% --- typeset settings ---
+% page layout
 \pagestyle{fancy}
 \fancyhf{} 
 \fancyfoot{}
@@ -30,45 +26,46 @@
 \addtolength{\topmargin}{0.2in}
 \addtolength{\textheight}{0.0in}
 
-\urlstyle{same}
-
-%\raggedbottom
-\raggedright
-\setlength{\tabcolsep}{0in}
-
+% section format
 \titleformat{\section}{
-  \vspace{-15pt}
-  \large\vspace{3pt}\scshape
+    \vspace{-15pt}
+    \large\vspace{3pt}\scshape
 }{}{0em}{}[\color{black}\titlerule]%\vspace{-5pt}]
 
-\pdfgentounicode=1
+% others
+\urlstyle{same}  % url style
+\raggedright  % left align
+\setlength{\tabcolsep}{0in}  % table padding
+\pdfgentounicode=1  % enable the generation of Unicode mappings in the PDF output
 
-\newcommand{\resumeItem}[1]{
-  \item{
-    {#1 \vspace{-4pt}}
-  }
+% --- custom commands ---
+% resume listing
+\newcommand{\resumeListingStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeListingEnd}{\end{itemize}\vskip5pt}
+
+\newcommand{\resumeEntry}[4]{
+    % 2x2 standard entry in resume listing
+    % the first 2 arguments are used for the main line
+    % the last 2 arguments are used for the subline
+    \vspace{-2pt}\item
+        \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+            \textbf{#1} & #2 \\
+            \textit{\small #3} & \textit{\small #4} \\
+        \end{tabular*}\vspace{-10pt}
 }
 
-\newcommand{\resumeSubheading}[4]{
-  \vspace{-2pt}\item
-    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
-      \textbf{#1} & #2 \\
-      \textit{\small #3} & \textit{\small #4} \\
-    \end{tabular*}\vspace{-10pt}
-}
 \newcommand{\resumeSubline}[1]{
-  \vspace{-5pt}\item
-    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
-      \textit{\small #1} &  \\
-    \end{tabular*}\vspace{-17pt}
+    % additional subline in resume
+    \vspace{-5pt}\item
+        \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+            \textit{\small #1} &  \\
+        \end{tabular*}\vspace{-17pt}
 }
 
-\newcommand{\resumeSubItem}[1]{\resumeItem{#1}}%\vspace{-3pt}}
-\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
-\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
-\newcommand{\resumeSubHeadingListEnd}{\end{itemize}\vskip5pt}
-\newcommand{\resumeItemListStart}{\begin{itemize}}
-\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-2pt}}
+% resume itemize
+\newenvironment{resumeItemize}
+  {\begin{itemize}[leftmargin=0.15in, label={}, itemsep=0em]}
+  {\end{itemize}}
 
 % link with parentheses
 \newcommand{\paralink}[2]{\href{#1}{\textsl{(#2)}}}
