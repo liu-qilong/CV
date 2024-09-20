@@ -2,6 +2,8 @@
 
 This is a simple CV template with customized functionalities.
 
+![img](https://github.com/liu-qilong/CV/blob/main/gallery/CV.png?raw=true)
+
 ## How to use this template
 
 ### Import the template package
