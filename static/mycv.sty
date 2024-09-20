@@ -1,0 +1,163 @@
+\ProvidesPackage{myCV}
+
+% required packages
+\RequirePackage{etoolbox}  % tools for custom commands
+\RequirePackage[empty]{fullpage}  % full page margin
+\RequirePackage{baskervillef}  % Baskerville font
+\RequirePackage[T1]{fontenc}  % font encoding
+\RequirePackage[english]{babel}  % language
+\RequirePackage{titlesec}  % custom section fonts
+\RequirePackage{fancyhdr}  % header and footer
+\RequirePackage[usenames,dvipsnames]{xcolor}  % colors
+\RequirePackage{enumitem}  % list spacing
+\RequirePackage[hidelinks]{hyperref}  % links
+\RequirePackage{graphicx}  % images
+\RequirePackage{tabularx}  % advanced tables
+\RequirePackage{multicol}  % multiple columns
+
+% --- typeset settings ---
+% page layout
+\pagestyle{fancy}
+\fancyhf{} 
+\fancyfoot{}
+\setlength{\footskip}{10pt}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\addtolength{\oddsidemargin}{0.0in}
+\addtolength{\evensidemargin}{0.0in}
+\addtolength{\textwidth}{0.0in}
+\addtolength{\topmargin}{0.2in}
+\addtolength{\textheight}{0.0in}
+
+% section format
+\titlespacing*{\section}{0pt}{5pt}{5pt}
+
+\titleformat{\section}{
+    \large\scshape
+}{}{0em}{}[\color{black}\titlerule]
+
+% others
+\urlstyle{same}  % url style
+\raggedright  % left align
+\setlength{\tabcolsep}{0in}  % table padding
+
+% --- title ---
+% name
+\newcommand{\name}[1]{\renewcommand{\name}{#1}}
+
+% email
+\newcommand{\emailflag}{0}
+\newcommand{\email}[1]{
+    \renewcommand{\email}{#1}
+    \renewcommand{\emailflag}{1}
+    }
+
+% links bar
+\newcommand{\links}{}
+\newcommand{\linksflag}{0}
+\newcommand{\addlink}[2]{
+    % #1: link #2: text
+    \appto{\links}{\href{#1}{#2} }
+    \renewcommand{\linksflag}{1}
+    }
+
+% info bar
+\newcommand{\infos}{}
+\newcommand{\infosflag}{0}
+\newcommand{\oddflag}{1}
+\newcommand{\addinfo}[2]{
+    % #1: type #2: info
+    \renewcommand{\infosflag}{1}
+    \ifnum\oddflag=1
+        \appto{\infos}{\textbf{#1}\,{#2} \,}
+        \renewcommand{\oddflag}{0}
+    \else
+        \appto{\infos}{& \textperiodcentered & \, \textbf{#1}\,{#2} \\}
+        \renewcommand{\oddflag}{1}
+    \fi
+    }
+
+% profile photo
+\newcommand{\profileflag}{0}
+\newcommand{\profile}[1]{
+    \renewcommand{\profile}{#1}
+    \renewcommand{\profileflag}{1}
+    }
+
+% make title
+\renewcommand{\maketitle}{
+    \begin{center}
+        % name
+        {\hskip1cm\LARGE{\name}}\\
+        
+        % email
+        \ifnum\emailflag=1
+            \vskip5pt\url{\email}\\
+        \fi
+        
+        % links
+        \ifnum\linksflag=1
+            \vskip5pt\links
+        \fi
+
+        % info
+        \ifnum\infosflag=1
+            \vskip15pt
+            \begin{tabular}{rcl}
+                \infos
+            \end{tabular}
+        \fi
+
+        % profile
+        \ifnum\profileflag=1
+            \vskip5pt
+            \hfill\smash{\includegraphics[width=0.12\paperwidth]{\profile}}
+        \fi
+    \end{center}
+}
+
+\newcommand{\resumeInfo}[4]{
+  \textbf{#1}\,{#2} \, & \textperiodcentered & \, \textbf{#3}\,{#4} \\
+}
+
+% --- custom commands ---
+% resume columns
+\newcommand{\resumeColumnsStart}{\begin{itemize}[leftmargin=0.15in, label={}, itemsep=0em]}
+\newcommand{\resumeColumnsEnd}{\end{itemize}}
+
+\newcommand{\resumeEntry}[4]{
+    % 2x2 standard entry in resume columns
+    % the first 2 arguments are used for the main line
+    % the last 2 arguments are used for the subline
+    \item
+        \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+            \textbf{#1} & #2 \\
+            \textit{\small #3} & \textit{\small #4} \\
+        \end{tabular*}
+}
+
+\newcommand{\resumeSubentry}[2]{
+    % 1x2 entry in resume columns
+    % the first 2 arguments are used for the main line
+    \item
+        \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+            \textit{\small{#1}} & #2 \\
+        \end{tabular*}
+}
+
+\newcommand{\resumeSubline}[1]{
+    % additional subline in resume
+    \item
+        \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+            \textit{\small #1} &  \\
+        \end{tabular*}
+}
+
+% resume itemize
+\newenvironment{resumeItemize}
+  {\begin{itemize}[leftmargin=0.15in, label={}, itemsep=0em]}
+  {\end{itemize}}
+
+% link with parentheses
+\newcommand{\paralink}[2]{\href{#1}{\textsl{(#2)}}}
