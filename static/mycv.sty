@@ -13,6 +13,7 @@
 \RequirePackage[hidelinks]{hyperref}  % links
 \RequirePackage{graphicx}  % images
 \RequirePackage{tabularx}  % advanced tables
+\RequirePackage{array}  % advanced tabular alignment
 \RequirePackage{multicol}  % multiple columns
 
 % --- typeset settings ---
@@ -80,16 +81,25 @@
 
 % profile photo
 \newcommand{\profileflag}{0}
+
 \newcommand{\profile}[1]{
     \renewcommand{\profile}{#1}
     \renewcommand{\profileflag}{1}
     }
 
+\newcommand{\profileWidth}{3cm}
+\newcommand{\setProfileWidth}[1]{\renewcommand{\profileWidth}{#1}}
+
 % make title
+\newcommand{\PreserveBackslash}[1]{\let\temp=\\#1\let\\=\temp}
+\newcolumntype{C}[1]{>{\PreserveBackslash\centering}p{#1}}
+\newcolumntype{R}[1]{>{\PreserveBackslash\raggedleft}p{#1}}
+\newcolumntype{L}[1]{>{\PreserveBackslash\raggedright}p{#1}}
+
 \renewcommand{\maketitle}{
     \begin{center}
         % name
-        {\hskip1cm\LARGE{\name}}\\
+        {\LARGE{\name}}\\
         
         % email
         \ifnum\emailflag=1
@@ -104,15 +114,15 @@
         % info
         \ifnum\infosflag=1
             \vskip15pt
-            \begin{tabular}{rcl}
+            % \hskip-1cm\begin{tabular}{rcl}
+            \begin{tabular}{R{0.45\textwidth}cL{0.45\textwidth}}
                 \infos
             \end{tabular}
         \fi
 
         % profile
         \ifnum\profileflag=1
-            \vskip5pt
-            \hfill\smash{\includegraphics[width=0.12\paperwidth]{\profile}}
+            \hfill\smash{\includegraphics[width=\profileWidth]{\profile}}
         \fi
     \end{center}
 }
